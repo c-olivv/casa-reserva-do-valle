@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casas no Jardim Belvedere | Simulação Exclusiva</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- CABEÇALHO FIXO -->
+<header class="navbar">
+    <div class="navbar-container">
+        <!-- Espaço para a Logo -->
+        <a href="#" class="logo-area">
+            <img src="https://via.placeholder.com/150x40?text=Sua+Logo" alt="Logo" id="siteLogo">
+        </a>
+
+        <!-- Menu Suspenso (Dropdown) -->
+        <nav class="nav-dropdown">
+            <button class="dropdown-btn">
+                Menu ☰
+            </button>
+            <div class="dropdown-content">
+                <a href="#imovel">O Imóvel</a>
+                <a href="#galeria">Galeria</a>
+                <a href="#detalhes">Diferenciais</a>
+                <a href="#localizacao">Localização</a>
+                <a href="#simulador">Simulador</a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<div class="page-layout">
+    
+<!-- SEÇÃO ESQUERDA: Informações do Imóvel e Galeria -->
+<main class="property-info" id="imovel">
+    <!-- Cabeçalho do Imóvel -->
+    <div class="property-header">
+        <h1 class="main-title">Casas na planta no Jardim Belvedere</h1>
+        <p class="main-subtitle">Seu novo endereço está tomando forma</p>
+        
+        <!-- Badges de Informações Rápidas -->
+        <div class="property-badges">
+            <span class="badge">📐 137 m²</span>
+            <span class="badge">🛏️ 3 quartos</span>
+            <span class="badge">🚿 1 suíte</span>
+            <span class="badge">🚗 2 vagas</span>
+        </div>
+
+        <!-- Foto de Destaque Fixa -->
+        <div class="featured-photo-container">
+            <img src="images/fachada.png" alt="Fachada do Imóvel" class="featured-photo" onclick="abrirModal(this.src)">
+        </div>
+    </div>
+
+    <!-- SEÇÃO DA GALERIA -->
+    <div class="gallery-section" id="galeria">
+        <h2 class="section-title">Galeria</h2>
+
+        <!-- CARROSSEL DE FOTOS -->
+        <div class="carousel-container">
+            <div class="carousel-track" id="carouselTrack">
+                <div class="carousel-slide">
+                    <img src="images/living.png" alt="Living" onclick="abrirModal(this.src)">
+                </div>
+                <div class="carousel-slide">
+                    <img src="images/suite.png" alt="Suíte" onclick="abrirModal(this.src)">
+                </div>
+                <div class="carousel-slide">
+                    <img src="images/lazer.png" alt="Lazer" onclick="abrirModal(this.src)">
+                </div>
+                <div class="carousel-slide">
+                    <img src="images/cozinha.png" alt="Cozinha" onclick="abrirModal(this.src)">
+                </div>
+                <div class="carousel-slide">
+                    <img src="images/banheiro.png" alt="Banheiro" onclick="abrirModal(this.src)">
+                </div>
+                <div class="carousel-slide">
+                    <img src="images/planta.png" alt="planta" onclick="abrirModal(this.src)">
+                </div>
+            </div>
+
+            <!-- Botões de Navegação -->
+            <button class="carousel-btn prev" onclick="mudarSlide(-1)">&#10094;</button>
+            <button class="carousel-btn next" onclick="mudarSlide(1)">&#10095;</button>
+            
+            <!-- Indicadores de página -->
+            <div class="carousel-dots" id="carouselDots"></div>
+        </div>
+    </div>
+
+    <!-- MODAL / EXPANSÃO DA IMAGEM -->
+    <div id="imageModal" class="modal" onclick="fecharModal()">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="imgModalExpanded">
+    </div>
+
+    <div class="highlight-box" id="detalhes">
+        <h2 class="section-title">Detalhes</h2>
+    
+        <ul class="features-list">
+            <li>📐 <strong>137 m²</strong> de área construída com arquitetura contemporânea</li>
+            <li>🛏️ <strong>3 Quartos</strong> (sendo 1 suíte espaçosa)</li>
+            <li>🥩 <strong>Espaço Gourmet</strong> integrado com churrasqueira (perfeito para receber)</li>
+            <li>🚗 <strong>Garagem</strong> para 2 veículos</li>
+            <li>☀️ <strong>Excelente iluminação natural</strong> e ventilação</li>
+            <li>❄️ <strong>Preparação/Infraestrutura</strong> pronta para ar-condicionado</li>
+            <li>💎 <strong>Acabamentos premium</strong> e design funcional</li>
+        </ul>
+
+        <div class="location-status">
+            <p>🏗️ <strong>Status:</strong> Em obras (Entrega: Outubro/26)</p>
+        </div>
+    </div>
+    
+    <!-- SUBSEÇÃO DEDICADA À LOCALIZAÇÃO -->
+        <div class="location-section" id="localizacao">
+            <h2 class="section-title">Localização</h2>
+            <p class="location-address">📍 Jardim Belvedere — Volta Redonda, RJ</p>
+
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8149.080433641949!2d-44.06558849591312!3d-22.53528317604543!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9ea3e2a1585733%3A0x7f7ebe2c6d88589a!2sResidencial%20Alvorada!5e1!3m2!1spt-BR!2sbr!4v1787250000584!5m2!1spt-BR!2sbr"
+                    width="600"
+                    height="450"
+                    style="border:0;"
+                    allowfullscreen="true"
+                    allow="fullscreen"
+                    loading="lazy"
+                    referrerpolicy="strict-origin-when-cross-origin">
+                </iframe>
+            </div>
+            
+    <!-- PONTOS DE INTERESSE PRÓXIMOS -->
+        <div class="nearby-places">
+            <h3 class="nearby-title">O que há por perto:</h3>
+            <div class="nearby-grid">
+                <div class="nearby-item">
+                    <span class="nearby-icon">🛒</span>
+                    <div>
+                        <strong>Supermercados</strong>
+                        <p>A 3 min de grandes redes</p>
+                    </div>
+                </div>
+                <div class="nearby-item">
+                    <span class="nearby-icon">🏫</span>
+                    <div>
+                        <strong>Escolas e Faculdades</strong>
+                        <p>A 5 min do polo educacional</p>
+                    </div>
+                </div>
+                <div class="nearby-item">
+                    <span class="nearby-icon">🏥</span>
+                    <div>
+                        <strong>Saúde e Hospitais</strong>
+                        <p>A 4 min do Hospital Unimed</p>
+                    </div>
+                </div>
+                <div class="nearby-item">
+                    <span class="nearby-icon">🚗</span>
+                    <div>
+                        <strong>Fácil Acesso</strong>
+                        <p>Conexão rápida com a Rod. dos Metalúrgicos</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- SEÇÃO DIREITA: Formulário de Simulação -->
+    <aside class="container" id="simulador">
+        <h2>Simulador de Financiamento</h2>
+        
+        <form id="formSimulacao" onsubmit="processarSimulacao(event)">
+            <input type="hidden" id="imovelReferencia" value="Casas Belvedere 750k">
+
+            <div class="form-group">
+                <label for="nome">Nome Completo</label>
+                <input type="text" id="nome" required placeholder="Digite seu nome">
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" required placeholder="seu@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="telefone">Telefone / WhatsApp</label>
+                    <input type="tel" id="telefone" required placeholder="(24) 99999-9999" pattern="\(?[0-9]{2}\)?\s?[0-9]{4,5}-?[0-9]{4}">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="renda">Renda Mensal (R$)</label>
+                    <input type="text" id="renda" required placeholder="R$ 0,00">
+                </div>
+                <div class="form-group">
+                    <label for="valorImovel">Valor do Imóvel (R$)</label>
+                    <input type="text" id="valorImovel" value="R$ 750.000,00" readonly style="background-color: #edf2f7; cursor: not-allowed;">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="valorEntrada">Valor da Entrada (R$)</label>
+                    <input type="text" id="valorEntrada" value="R$ 150.000,00" required>
+                </div>
+                <div class="form-group">
+                    <label for="prazoAnos">Prazo (Anos)</label>
+                    <input type="number" id="prazoAnos" value="30" min="1" max="35" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="sistema">Sistema de Amortização</label>
+                    <select id="sistema">
+                        <option value="SAC">SAC (Parcelas Decrescentes)</option>
+                        <option value="PRICE">PRICE (Parcelas Fixas)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="taxaAnual">Taxa de Juros Anual (%)</label>
+                    <input type="number" id="taxaAnual" step="0.01" value="9.5" required>
+                </div>
+            </div>
+
+            <button type="submit" class="btn-submit">Simular Financiamento</button>
+        </form>
+
+        <div id="resultado">
+            <h3>Resultado da Simulação</h3>
+            <div class="cards-grid" id="cardsContainer"></div>
+            <a id="linkWhatsapp" class="cta-whatsapp" target="_blank" rel="noopener noreferrer">Falar com Consultor no WhatsApp</a>
+        </div>
+    </aside>
+
+</div>
+
+<script src="script.js?v=1.1"></script>
+
+<!-- BOTÃO FLUTUANTE WHATSAPP -->
+<a href="https://wa.me/5524988114415?text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20as%20casas%20no%20Jardim%20Belvedere." 
+   class="whatsapp-float" 
+   target="_blank" 
+   rel="noopener noreferrer" 
+   aria-label="Falar no WhatsApp">
+    <svg viewBox="0 0 32 32" class="whatsapp-icon">
+        <path fill="#FFFFFF" d="M16 2.05A13.92 13.92 0 0 0 2.08 16c0 2.48.64 4.89 1.87 7.02L2 29.87l7.03-1.84A13.88 13.88 0 0 0 16 29.95c7.68 0 13.92-6.24 13.92-13.95S23.68 2.05 16 2.05zm0 25.55c-2.18 0-4.3-.57-6.17-1.66l-.44-.26-4.58 1.2 1.22-4.46-.29-.46A11.53 11.53 0 0 1 4.41 16c0-6.4 5.2-11.6 11.59-11.6 6.39 0 11.59 5.2 11.59 11.6 0 6.4-5.2 11.6-11.59 11.6zm6.36-8.68c-.35-.18-2.07-1.02-2.39-1.14-.32-.12-.55-.18-.78.18-.23.35-.9 1.14-1.1 1.37-.2.23-.41.26-.76.09-.35-.18-1.48-.55-2.82-1.74-1.04-.93-1.74-2.08-1.95-2.43-.2-.35-.02-.54.15-.71.16-.16.35-.41.53-.61.18-.2.23-.35.35-.58.12-.23.06-.44-.03-.61-.09-.18-.78-1.88-1.07-2.58-.28-.68-.57-.59-.78-.6h-.67c-.23 0-.61.09-.93.44-.32.35-1.22 1.2-1.22 2.92 0 1.72 1.25 3.39 1.43 3.63.18.23 2.46 3.76 5.96 5.27.83.36 1.48.58 1.99.74.84.27 1.61.23 2.22.14.68-.1 2.07-.85 2.36-1.67.29-.82.29-1.53.2-1.67-.09-.14-.32-.23-.67-.41z"/>
+    </svg>
+</a>
+
+</body>
+</html>
